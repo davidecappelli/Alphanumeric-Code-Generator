@@ -5,7 +5,7 @@ class AlphanumericCodesGenerator {
     private static $maxvolume   = 100001;
     private static $length;                 // Max length of each single string (including Prefix)
     private static $maxlength   = 16;
-    private static $technique;              // Applied technique to generate code (default is uniqueid())
+    private static $technique;              // Applied technique to generate code (default is custom())
     private static $techniques  = [
 	        ['name' => 'custom()', 'callback' => 'custom', 'desc' => 'Randomizer (large volumes)'],
 	        ['name' => 'md5()', 'callback' => 'md5', 'desc' => 'MD5'],
@@ -166,7 +166,7 @@ class AlphanumericCodesGenerator {
               </style>
             </head>
 		        <body>
-                <h2>Generatore Codici Alfanumerici</h2>
+                <h2>Alphanumeric Code Generator</h2>
             		<?php echo self::form(); ?>
                 <?php if(self::$checkFields === TRUE && self::$output != 'csv'): ?>
                 <div id="output">
